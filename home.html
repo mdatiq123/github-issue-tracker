@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="shortcut icon" href="./assets/git-hub-issue.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#F8FAFC]  ">
+    <header>
+        <nav>
+            <div class="navbar bg-white shadow-sm border-b border-base-300 px-10 md:px-20 py-4">
+                <div class="flex-1 ">
+                    <div class="flex flex-row  items-center space-x-1">
+                        <img class="w-9 h-9" src="./assets/github-logo.png" alt="">
+                        <h1 class="font-semibold text-xl md:text-2xl text-neutral">GitHub Issues Tracker</h1>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <label class="input input-bordered flex items-center gap-2 w-full ">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+
+                        <input id="search-input" type="text" class="grow outline-none max-w-md md:w-[300px]"
+                            placeholder="Search issues..." />
+                    </label>
+                    <button id="search-btn" class="btn btn-primary text-xl font-bold">+ New Issue</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- buttons -->
+    <section>
+        <div class="filter-buttons bg-white w-10/12 mx-auto mt-12 p-6 shadow-md rounded-md ">
+            <button id="all-btn" class="btn btn-primary  buttons w-[120px]">All</button>
+            <button id="open-btn" class="btn btn-primary btn-outline buttons w-[120px]">open</button>
+            <button id="close-btn" class="btn btn-primary btn-outline buttons w-[120px]">close</button>
+
+        </div>
+    </section>
+
+    <!-- card section -->
+    <section class="w-10/12 mx-auto mb-12 shadow-xl ">
+        <div class="mt-4 bg-white shadow-xl border-b border-base-300 px-6 py-4 flex justify-between">
+            <div class="flex gap-1">
+                <div class="p-2 rounded-full bg-[#ECE4FF] flex justify-center items-center"><img
+                        src="./assets/Aperture.png" alt=""></div>
+                <div class="">
+                    <h2 class="font-semibold text-xl text-neutral"><span id="issues-Counter">0</span> Issues</h2>
+                    <p class="text-[#64748B] font-normal text-[16px] ">Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="flex gap-2 justify-center items-center">
+                <div class="text-xs text-neutral font-bold "><span
+                        class="bg-[#00A96E] rounded-full  py-0 px-2 mr-1 "></span> open</div>
+                <div class="text-xs text-neutral font-bold"><span
+                        class="bg-[#A855F7] rounded-full py-0 px-2 mr-1 "></span> closed</div>
+            </div>
+        </div>
+        <hr class="bg-gray-400">
+        <section id="spinner" class="mt-12 flex justify-center items-center hidden">
+            <span class="loading loading-bars loading-xl"></span>
+        </section>
+        <div id="card-Container"
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white py-12 px-3 shadow-md mb-4 rounded-b-md items-center">
+
+        </div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modalContainer">
+
+            </div>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+
+    <script src="./script/home.js"></script>
+</body>
+
+</html>
