@@ -49,24 +49,24 @@ const displayData = (card) => {
 
     card.forEach(card => {
         const cardDiv = document.createElement("div")
-        cardDiv.innerHTML = `<div onclick="loadIssue(${card.id})" class="card border-t-4   rounded-md shadow-md space-y-1 py-3 px-2 h-[256px] ">
+        cardDiv.innerHTML = `<div onclick="loadIssue(${card.id})" class="card border-t-4   rounded-md shadow-sm space-y-2 py-3 px-5 h-[320px]">
                 <div class="flex justify-between items-center">
                     <img id="open" class=" open" src="./assets/Open-Status.png" alt="">
                     <img id="close" class=" close" src="./assets/Closed- Status .png" alt="">
-                    <button  class="priority  rounded-lg py-1 px-3 font-bold italic border">${card.priority}</button>
+                    <span  class="priority  rounded-full py-1 px-3 font-bold italic border">${card.priority}</span>
                 </div>
                 <div class="space-x-1">
-                    <h2 class="font-semibold text-xl text-neutral">${card.title}</h2>
+                    <h2 class="font-semibold text-xl text-neutral h-17 ">${card.title}</h2>
                     <p class="text-[#64748B] font-normal text-xs">${card.description}</p>
                 </div>
                 <div class="space-x-1 mb-2">
                    <div class="space-x-1">${createElement(card.labels)}
                 </div>
                 </div>
-                <hr class="text-gray-400">
-                <div class="space-x-1">
+                <hr class="text-gray-300">
+                <div class="space-y-2 mt-5">
                     <h4 class="text-[#64748B]">#1by ${card.author}</h4>
-                    <p class="text-[#64748B]">${card.createdAt}</p>
+                    <p class="text-[#64748B] ">${card.createdAt}</p>
                 </div>
             </div>
             `
