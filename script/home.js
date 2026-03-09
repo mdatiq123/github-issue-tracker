@@ -208,11 +208,9 @@ const toggleButtonStyle = (clickedBtn) => {
         btn.classList.remove("btn-primary");
     });
 
-
     clickedBtn.classList.remove("btn-outline");
     clickedBtn.classList.add("btn-primary");
 };
-
 
 allBtn.addEventListener("click", () => {
     toggleButtonStyle(allBtn);
@@ -227,7 +225,6 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
     toggleButtonStyle(closeBtn);
-
 
     const filtered = allIssues.filter(issue =>
         issue.status === "closed"
@@ -270,12 +267,10 @@ document.getElementById("search-btn").addEventListener("click", () => {
             const filterCard = allCard.filter(card => {
                 return card.title.toLowerCase().includes(searchText);
             });
-
             
             displayData(filterCard);
             manageSpinner(false);
-
-            
+           
             [allBtn, openBtn, closeBtn].forEach(btn => {
                 btn.classList.add("btn-outline");
                 btn.classList.remove("btn-primary");
